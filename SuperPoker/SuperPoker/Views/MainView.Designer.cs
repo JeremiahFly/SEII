@@ -31,7 +31,7 @@
             this.gbUserInput = new System.Windows.Forms.GroupBox();
             this.gbServer = new System.Windows.Forms.GroupBox();
             this.gbOutput = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbOutput = new System.Windows.Forms.TextBox();
             this.nudCard1 = new System.Windows.Forms.NumericUpDown();
             this.nudCard2 = new System.Windows.Forms.NumericUpDown();
             this.nudCard3 = new System.Windows.Forms.NumericUpDown();
@@ -65,33 +65,41 @@
             // 
             // gbServer
             // 
+            this.gbServer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbServer.Controls.Add(this.bServerSubmit);
             this.gbServer.Location = new System.Drawing.Point(582, 3);
             this.gbServer.Name = "gbServer";
-            this.gbServer.Size = new System.Drawing.Size(671, 297);
+            this.gbServer.Size = new System.Drawing.Size(489, 297);
             this.gbServer.TabIndex = 1;
             this.gbServer.TabStop = false;
             this.gbServer.Text = "Server Input";
             // 
             // gbOutput
             // 
-            this.gbOutput.Controls.Add(this.textBox1);
+            this.gbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbOutput.Controls.Add(this.tbOutput);
             this.gbOutput.Location = new System.Drawing.Point(3, 308);
             this.gbOutput.Name = "gbOutput";
-            this.gbOutput.Size = new System.Drawing.Size(1249, 330);
+            this.gbOutput.Size = new System.Drawing.Size(1068, 330);
             this.gbOutput.TabIndex = 2;
             this.gbOutput.TabStop = false;
             this.gbOutput.Text = "Output";
             // 
-            // textBox1
+            // tbOutput
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(71, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1097, 116);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOutput.Location = new System.Drawing.Point(6, 95);
+            this.tbOutput.Name = "tbOutput";
+            this.tbOutput.ReadOnly = true;
+            this.tbOutput.Size = new System.Drawing.Size(1056, 116);
+            this.tbOutput.TabIndex = 0;
+            this.tbOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nudCard1
             // 
@@ -200,11 +208,14 @@
             this.bManualSubmit.TabIndex = 5;
             this.bManualSubmit.Text = "Submit";
             this.bManualSubmit.UseVisualStyleBackColor = true;
+            this.bManualSubmit.Click += new System.EventHandler(this.bManualSubmit_Click);
             // 
             // bServerSubmit
             // 
+            this.bServerSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bServerSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bServerSubmit.Location = new System.Drawing.Point(173, 82);
+            this.bServerSubmit.Location = new System.Drawing.Point(130, 82);
             this.bServerSubmit.Name = "bServerSubmit";
             this.bServerSubmit.Size = new System.Drawing.Size(268, 88);
             this.bServerSubmit.TabIndex = 0;
@@ -220,7 +231,7 @@
             this.Controls.Add(this.gbServer);
             this.Controls.Add(this.gbUserInput);
             this.Name = "MainView";
-            this.Size = new System.Drawing.Size(1323, 639);
+            this.Size = new System.Drawing.Size(1079, 646);
             this.gbUserInput.ResumeLayout(false);
             this.gbUserInput.PerformLayout();
             this.gbServer.ResumeLayout(false);
@@ -244,7 +255,7 @@
         private System.Windows.Forms.NumericUpDown nudCard1;
         private System.Windows.Forms.GroupBox gbServer;
         private System.Windows.Forms.GroupBox gbOutput;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbOutput;
         private System.Windows.Forms.Button bManualSubmit;
         private System.Windows.Forms.Button bServerSubmit;
     }

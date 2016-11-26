@@ -20,7 +20,8 @@ namespace SuperPoker.Controler
         public string Solve(int card1, int card2, int card3, int card4)
         {
             //for Paul
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return "card1=" + card1 + " card2=" + card2 + " card3=" + card3 + " card4=" + card4;
         }
     }
 }
