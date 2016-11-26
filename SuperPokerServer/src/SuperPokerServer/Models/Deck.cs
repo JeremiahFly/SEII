@@ -30,10 +30,16 @@ namespace Ringmaster.Models
         private static Deck BuildDeck()
         {
             var deck = new Deck();
+            deck.Cards = new List<Card>();
 
             foreach (CardValue cardValue in Enum.GetValues(typeof(CardValue)))
-                for (var cardCount = 0; cardCount < 4; cardCount++)
-                    deck.Cards.Add(new Card(cardValue));
+            {
+                if (cardValue != CardValue.Joker)
+                {
+                    for (var cardCount = 0; cardCount < 4; cardCount++)
+                        deck.Cards.Add(new Card(cardValue));
+                }
+            }
 
             return deck;
         }

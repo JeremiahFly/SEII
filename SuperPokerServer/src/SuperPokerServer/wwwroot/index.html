@@ -4,18 +4,47 @@
     <meta charset="utf-8" />
     <title>Super Poker Controler</title>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css" />
 </head>
 <body>
-    
 
-    <div class="container">
-        <div ui-view></div>
+    <div ng-controller="indexController">
+        <h1>Super Poker Inpute</h1>
+        <div>
+            <form name="form.addForm">
+                <div class="form-group">
+                    <label>Input Cards:</label>
+                    <div class="row">
+                       <div class="col-md-2"> <input ng-model="formCards.c1" class="form-control col-md-2" type="number" max="13" min="1" /> </div>
+                        <div class="col-md-2"> <input ng-model="formCards.c2" class="form-control col-md-2" type="number" max="13" min="1" /> </div>
+                        <div class="col-md-2"> <input ng-model="formCards.c3" class="form-control col-md-2" type="number" max="13" min="1" /> </div>
+                        <div class="col-md-2"> <input ng-model="formCards.c4" class="form-control col-md-2" type="number" max="13" min="1" /> </div>
+                    </div>
+                    <button class="btn btn-primary" ng-click="accept()">Change Cards</button>
+                    <button class="btn btn-warning" ng-click="getData()">Reset Form</button>
+                    <h6>{{error.message}}</h6>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h2>Current Cards</h2>
+            <table class="table">
+                <thead></thead>
+                <tbody>
+                    <tr ng-repeat="c in cards.cards">
+                        <td>{{c.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+
     <script src="/lib/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="/lib/angular/angular.js"></script>
     <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/app.js" type="text/javascript"></script>
-
+    <script src="indexController.js" type="text/javascript"></script>
+    <script src="indexService.js" type="text/javascript"></script>
 </body>
 </html>

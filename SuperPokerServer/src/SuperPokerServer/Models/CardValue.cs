@@ -2,6 +2,7 @@
 {
     public enum CardValue
     {
+        Joker,
         Ace,
         Two,
         Three,

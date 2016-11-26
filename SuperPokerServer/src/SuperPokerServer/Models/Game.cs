@@ -9,6 +9,7 @@ namespace Ringmaster.Models
         public Game()
         {
             this.GameDeck = this.BuildGameDeck();
+            Players = new List<Player>();
         }
 
         public bool Active { get; set; }

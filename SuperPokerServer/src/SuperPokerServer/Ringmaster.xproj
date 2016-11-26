@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>91cf4865-1d23-4ca2-9a2f-ecb3eb28706a</ProjectGuid>
+    <ProjectGuid>6428c06a-625b-4123-adb3-5ec18d61b414</ProjectGuid>
     <RootNamespace>Ringmaster</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

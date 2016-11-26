@@ -26,7 +26,7 @@ namespace Ringmaster.Controllers
         [HttpPost]
         public void Post([FromBody] SuperPokerDeck newDeck)
         {
-
+            this.SuperPokerService.SetCurrentDeck(newDeck);
         }
     }
 }
