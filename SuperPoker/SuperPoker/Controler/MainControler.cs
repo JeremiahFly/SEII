@@ -37,6 +37,6 @@ namespace SuperPoker.Controler
 
     public interface IMainView
     {
-        void SetOutput(String output);
+        void SetOutput(string output);
     }
 }
