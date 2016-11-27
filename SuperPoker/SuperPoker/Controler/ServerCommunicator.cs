@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
+using SuperPoker.Model;
 
 namespace SuperPoker.Controler
 {
     public class ServerCommunicator
     {
-        private string connectionString = "http://seiisuperpoker.azurewebsites.net/api/SuperPoker";
-
-        public ServerCommunicator() { }
-
+        private const string ConnectionString = "http://seiisuperpoker.azurewebsites.net/api/SuperPoker";
 
         /// <summary>
         /// Talks to the server and gets the cards from it
@@ -20,13 +17,13 @@ namespace SuperPoker.Controler
         public IEnumerable<int> GetCardsFromServer()
         {
             //For David
-            //temp methoid feel free to comment or delete for real implimentation
-            var temp =  new List<int>();
-            temp.Add(12);
-            temp.Add(2);
-            temp.Add(13);
-            temp.Add(13);
-            return temp;
+            
+            using (var webClient = new HttpClient())
+            {
+                var task = webClient.GetStringAsync(ConnectionString);
+                var deck = JsonConvert.DeserializeObject<Deck>(task.Result);
+                return deck.Cards.Select(card => card.Value);
+            }
         }
     }
 }
