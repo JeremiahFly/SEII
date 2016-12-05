@@ -18,7 +18,7 @@ namespace Ringmaster.Controllers
         [HttpGet]
         public SuperPokerDeck Get()
         {
-            this.SuperPokerService.AddPlayer(this.Request.Host.Value);
+            //this.SuperPokerService.AddPlayer(this.Request.Host.Value);
 
             return this.SuperPokerService.GameStart();
         }
