@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace SuperPoker.Controler
 {
-    public class DefaultSolver : ISuperPokerSolver
+    public class DefaultSolver : SearchMethod
     {
+        private Cards cards;
 
-        /// <summary>
-        /// Solves the 4 cards for superpoker
-        /// </summary>
-        /// <param name="card1">value of first card</param>
-        /// <param name="card2">value of second card</param>
-        /// <param name="card3">value of third card</param>
-        /// <param name="card4">value of fourth card</param>
-        /// <returns>String of a correct answer to the game or stating no solotion</returns>
-        public string Solve(int card1, int card2, int card3, int card4)
+        public void acceptInput(Cards cards)
         {
-            //for Paul
-            //throw new NotImplementedException();
-            return "card1=" + card1 + " card2=" + card2 + " card3=" + card3 + " card4=" + card4;
+            cards = this.cards;
+        }
+
+        public string receiveOutput()
+        {
+            return "card1=" + cards.getCard(1) + ", card2=" + cards.getCard(2) + ", card3=" + cards.getCard(3) +
+                   ", card4=" + cards.getCard(4);
+        }
+
+        public void search()
+        {
+            //do nothing we are just printing out cards
         }
     }
 }

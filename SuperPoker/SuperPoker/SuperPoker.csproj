@@ -50,10 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controler\Addition.cs" />
+    <Compile Include="Controler\Cards.cs" />
     <Compile Include="Controler\DefaultSolver.cs" />
-    <Compile Include="Controler\ISuperPokerSolver.cs" />
+    <Compile Include="Controler\DFS.cs" />
+    <Compile Include="Controler\Division.cs" />
+    <Compile Include="Controler\Division2.cs" />
     <Compile Include="Controler\MainController.cs" />
+    <Compile Include="Controler\Multiplication.cs" />
+    <Compile Include="Controler\Operation.cs" />
+    <Compile Include="Controler\SearchMethod.cs" />
     <Compile Include="Controler\ServerCommunicator.cs" />
+    <Compile Include="Controler\Subtraction.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>

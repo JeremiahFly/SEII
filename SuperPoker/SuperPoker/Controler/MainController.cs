@@ -7,24 +7,34 @@ namespace SuperPoker.Controler
     {
         private IMainView view;
         private ServerCommunicator communicator;
-        private ISuperPokerSolver solver;
+        private SearchMethod solver;
 
         public MainController(IMainView view)
         {
             this.view = view;
             communicator = new ServerCommunicator();
-            solver = new DefaultSolver();
+            
         }
 
         public void SolveServer()
         {
+            solver = new DFS();
             List<int> cards = communicator.GetCardsFromServer().ToList();
-            PrintOutput(solver.Solve(cards[0], cards[1], cards[2], cards[3]));
+            string c1 = cards[0] + "";
+            string c2 = cards[1] + "";
+            string c3 = cards[2] + "";
+            string c4 = cards[3] + "";
+            solver.acceptInput(new Cards(c1,c2,c3,c4));
+            solver.search();
+            PrintOutput(solver.receiveOutput());
         }
 
         public void ManualSolve(int card1, int card2, int card3, int card4)
         {
-            PrintOutput(solver.Solve(card1,card2,card3,card3));
+            solver = new DFS();
+            solver.acceptInput(new Cards(card1+"", card2 + "", card3 + "", card4 + ""));
+            solver.search();
+            PrintOutput(solver.receiveOutput());
         }
 
 
